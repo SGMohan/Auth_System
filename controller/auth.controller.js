@@ -5,9 +5,12 @@ const bcrypt = require("bcrypt");
 require("dotenv").config();
 const AuthRouter = require("express").Router();
 
-AuthRouter.get("/", (_, res) => {
+AuthRouter.get("/", async (_, res) => {
+  const users = await UserModel.find();
   return res.status(200).json({
     message: "Welcome to the Authentication API",
+    success: true,
+    data: users,
   });
 });
 
