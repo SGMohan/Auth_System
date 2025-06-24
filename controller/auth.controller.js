@@ -2,7 +2,6 @@
 const UserModel = require("../model/auth.model");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-require("dotenv").config();
 const AuthRouter = require("express").Router();
 
 AuthRouter.get("/", async (_, res) => {
